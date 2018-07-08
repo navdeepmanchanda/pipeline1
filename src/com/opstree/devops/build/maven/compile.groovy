@@ -4,7 +4,8 @@ package com.opstree.devops.build.maven
 ***** function to compile the code *****
 ***************************************/
 def code_compile(String maven_goals) {
-   wrap([$class: 'AnsiColorBuildWrapper']) {
+  try {
+      wrap([$class: 'AnsiColorBuildWrapper']) {
         println "\u001B[32m[INFO] => compiling java code, please wait..."
         sh "mvn ${maven_goals}"
       }
