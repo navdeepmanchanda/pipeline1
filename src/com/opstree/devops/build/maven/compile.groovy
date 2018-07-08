@@ -36,7 +36,7 @@ def unit_tests(String maven_test_goals, String pom_path) {
         env.JAVA_HOME = java_home
         MAVEN_TEST_GOALS = maven_test_goals
         POM_PATH = pom_path
-        env.PATH = "${maven_home}/bin:${JAVA_HOME/bin:${env.PATH}"
+        env.PATH = "${maven_home}/bin:${java_home}/bin:${env.PATH}"
         sh "mvn -f ${POM_PATH} ${MAVEN_TEST_GOALS}"
       }
    }
