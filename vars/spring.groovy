@@ -1,6 +1,7 @@
 #!groovy
 
 import com.opstree.devops.scm.*
+import com.opstree.devops.build.maven.*
 
 def call(body)
 {
@@ -15,6 +16,10 @@ def call(body)
             stage('\u2776 Code Checkout') {
                def c = new git()
                c.checkout("${config.git_url}","${config.branch}","${config.credentials}")
+            }
+            stage('\u2777 Code Compile') {
+               def c = new compile()
+               c.code_compile("${config.maven_goals}")
             }
          }
       }
