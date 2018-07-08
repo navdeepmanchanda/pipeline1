@@ -21,6 +21,10 @@ def call(body)
                def c = new compile()
                c.code_compile("${config.maven_goals}", "${config.pom_path}")
             }
+            stage('\u2778 Unit Tests') { 
+               def c = new compile()
+               c.unit_tests("${config.maven_test_goals}", "${config.pom_path}") 
+           }
          }
       }
       catch(Exception e) {
