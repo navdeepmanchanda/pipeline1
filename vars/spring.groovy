@@ -19,7 +19,7 @@ def call(body)
             }
             stage('\u2777 Code Compile') {
                def c = new compile()
-               c.code_compile("${config.maven_goals}")
+               c.code_compile("${config.maven_goals}", "${config.pom_path}")
             }
          }
       }
