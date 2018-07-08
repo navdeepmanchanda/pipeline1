@@ -27,7 +27,7 @@ def call(body)
       }
       finally {
         wrap([$class: 'AnsiColorBuildWrapper']) {
-           print '\u001B[34m[INFO] => in the finally block"
+           print '\u001B[34m[INFO] => in the finally block'
         }
       }
    }
