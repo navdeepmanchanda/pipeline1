@@ -8,8 +8,9 @@ def code_compile(String maven_goals) {
       wrap([$class: 'AnsiColorBuildWrapper']) {
         println "\u001B[32m[INFO] => compiling java code, please wait..."
         def maven_home = tool name: 'MAVEN_HOME', type: 'maven'
+        MAVEN_GOALS = maven_goals
         env.PATH = "${maven_home}/bin:${env.PATH}"
-        sh "mvn ${maven_goals}"
+        sh "mvn ${MAVEN_GOALS}"
       }
    }
    catch(Exception e)
