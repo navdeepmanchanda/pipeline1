@@ -12,7 +12,7 @@ def code_compile(String maven_goals, String pom_path) {
         MAVEN_GOALS = maven_goals
         POM_PATH = pom_path
         env.JAVA_HOME = java_home
-        env.PATH = "${maven_home}/bin:${java_home{/bin:${env.PATH}"
+        env.PATH = "${maven_home}/bin:${java_home}/bin:${env.PATH}"
         sh "mvn -f ${POM_PATH} ${MAVEN_GOALS}"
       }
    }
